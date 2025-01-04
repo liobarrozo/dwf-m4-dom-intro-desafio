@@ -1,30 +1,45 @@
 const cosasQueAprendimos = [
   {
     tema: "terminal",
-    class: "",
+    class: "lvl-0",
   },
   {
     tema: "node",
-    class: "",
+    class: "lvl-0",
   },
   {
     tema: "oop",
-    class: "",
+    class: "lvl-1",
   },
   {
     tema: "typescript",
-    class: "",
+    class: "lvl-1",
   },
   {
     tema: "css",
-    class: "",
+    class: "lvl-2",
   },
   {
-    tema: "dom",
-    class: "special",
+    tema: "DOM",
+    class: "lvl-2",
   },
 ];
 
-function main() {}
+function main() {
+
+  const lista = document.querySelector('.lista');
+  for (let x= 0; x < cosasQueAprendimos.length; x++){
+    //creamos un li
+    const nuevoEl = document.createElement('li');
+
+    //asignamos el texto y clase al li
+    nuevoEl.textContent = cosasQueAprendimos[x].tema;
+    nuevoEl.classList.add(cosasQueAprendimos[x].class);
+
+    //agregamos el li al <ul>
+    lista.appendChild(nuevoEl);
+
+  }
+}
 
 main();
